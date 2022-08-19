@@ -1,5 +1,5 @@
-import { UserDetailInfo } from "../../components/UserDetailInfo";
-import { UserDetailPosts } from "../../components/UserDetailPosts";
+import { UserDetailInfo, UserDetailPosts } from "../../components";
+// import { UserDetailPosts } from "../../components";
 
 export default function UserDetail() {
     return (

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Header() {
     return (
         <header>
@@ -93,9 +95,11 @@ export default function Header() {
                     <a href="#" className="ass1-header__btn-upload ass1-btn">
                         <i className="icon-Upvote" /> Upload
                     </a>
-                    <a href="dang-nhap.html" className="ass1-header__btn-upload ass1-btn">
-                        Login
-                    </a>
+                    <Link href="/login">
+                        <a href="dang-nhap.html" className="ass1-header__btn-upload ass1-btn">
+                            Login
+                        </a>
+                    </Link>
                 </div>
             </div>
         </header>

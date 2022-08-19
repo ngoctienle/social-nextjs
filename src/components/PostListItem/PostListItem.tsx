@@ -7,7 +7,6 @@ export default function PostListItem() {
             <PostItem />
             <PostItem />
             <PostItem />
-
             <button className="load-more ass1-btn"><span>Xem thêm</span></button>
         </div>
     )

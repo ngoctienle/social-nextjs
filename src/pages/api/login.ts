@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
     const expireDay = new Date()
     expireDay.setDate(expireDay.getDate() + 1)
     res.statusCode = 200
-    res.setHeader('Set-Cookie', `token = ${resHeroku.token}; Expires = ${expireDay.toUTCString()}; Path=/`)
+    // res.setHeader('Set-Cookie', `token = ${resHeroku.token}; Expires = ${expireDay.toUTCString()}; Path=/`)
     res.json(resHeroku)
   } catch (e) {
     res.statusCode = 200

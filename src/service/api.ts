@@ -18,17 +18,5 @@ const api = {
         }
         return fetch(_url, config).then(res => res.json())
     },
-    callWithAuth: async (url: string, data: Record<string, any>, method = 'GET') => {
-        const _url = `${BASE_URL}${url}`
-        const config = {
-            method,
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer todo-token'
-            },
-            body: JSON.stringify(data)
-        }
-        return fetch(_url, config).then(res => res.json())
-    }
 }
 export default api

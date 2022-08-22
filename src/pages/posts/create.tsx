@@ -1,5 +1,4 @@
-import { PostDetailForm } from "../../components/PostDetailForm";
-import { PostDetailSidebar } from "../../components/PostDetailSidebar";
+import { PostDetailForm, PostDetailSidebar } from "../../components";
 
 export default function PostCreate() {
 

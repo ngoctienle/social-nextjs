@@ -1,5 +1,4 @@
-import { HomeSidebar } from "../../components/HomeSidebar";
-import { PostDetailContent } from "../../components/PostDetailContent";
+import { HomeSidebar, PostDetailContent } from "../../components";
 
 export default function PostDetail() {
     return (

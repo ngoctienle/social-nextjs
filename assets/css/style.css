@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #eef3f6;
   font-size: 16px;
   color: #1e1633;
@@ -16,7 +20,7 @@ h4,
 h5,
 h6 {
   color: #1e1633;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin: 0;
 }
@@ -105,7 +109,7 @@ select.form-control:focus {
 .ass1-checkbox input:checked + span:before {
   position: absolute;
   display: block;
-  content: '';
+  content: "";
   width: 8px;
   height: 12px;
   top: 50%;
@@ -337,7 +341,7 @@ select.form-control:focus {
 .ass1-media__btn::before {
   position: absolute;
   display: block;
-  content: '';
+  content: "";
   border: solid 7px transparent;
   border-left: solid 12px #ffffff;
   left: 50%;
@@ -384,7 +388,7 @@ select.form-control:focus {
   }
 }
 .ass1-audio__player::before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 156px;
 }
@@ -525,7 +529,7 @@ select.form-control:focus {
   filter: alpha(opacity=50);
 }
 .ass1-voting label span::after {
-  content: '';
+  content: "";
   display: block;
   border-radius: 50%;
   background-color: #63616b;
@@ -556,7 +560,7 @@ select.form-control:focus {
   position: absolute;
   display: block;
   width: 32px;
-  content: 'vs';
+  content: "vs";
   top: 50%;
   left: 50%;
   margin-left: -16px;
@@ -566,7 +570,7 @@ select.form-control:focus {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  border-radius: calc(6px  * 0.6);
+  border-radius: calc(6px * 0.6);
   text-align: center;
 }
 .ass1-compare__images > div {
@@ -576,7 +580,7 @@ select.form-control:focus {
   padding: 0 5px;
 }
 .ass1-compare__images > div img {
-  border-radius: calc(6px  * 1.4);
+  border-radius: calc(6px * 1.4);
 }
 .ass1-compare span {
   color: #63616b;
@@ -674,7 +678,7 @@ select.form-control:focus {
     display: none;
   }
 }
-.ass1-content-head .row [class^='col-'] {
+.ass1-content-head .row [class^="col-"] {
   align-items: center;
   display: -moz-box;
   display: -ms-flexbox;
@@ -809,7 +813,8 @@ select.form-control:focus {
   color: #3482e2;
   border-bottom: solid 2px #3482e2;
 }
-.ass1-content-head__popularity-btn:hover .ass1-content-head__popularity-content {
+.ass1-content-head__popularity-btn:hover
+  .ass1-content-head__popularity-content {
   display: block;
 }
 .ass1-content-head__popularity-content {
@@ -923,7 +928,7 @@ select.form-control:focus {
 }
 .ass1-section__image-gif a::after {
   position: absolute;
-  content: 'gif';
+  content: "gif";
   display: block;
   padding: 0 4px;
   border-radius: 3px;
@@ -971,7 +976,10 @@ select.form-control:focus {
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-linear-gradient(transparent 40%, rgba(0, 0, 0, 0.7));
+  background-image: -webkit-linear-gradient(
+    transparent 40%,
+    rgba(0, 0, 0, 0.7)
+  );
   background-image: -moz-linear-gradient(transparent 40%, rgba(0, 0, 0, 0.7));
   background-image: -ms-linear-gradient(transparent 40%, rgba(0, 0, 0, 0.7));
   background-image: -o-linear-gradient(transparent 40%, rgba(0, 0, 0, 0.7));
@@ -1045,7 +1053,7 @@ select.form-control:focus {
   display: block;
 }
 .ass1-section__images div a::before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 66%;
 }
@@ -1206,7 +1214,8 @@ select.form-control:focus {
 .ass1-section.ass1-section__edit-post {
   margin-top: 44px;
 }
-.ass1-section__list, .ass1-section__sidebar {
+.ass1-section__list,
+.ass1-section__sidebar {
   margin-top: 44px;
 }
 .ass1-section.ass1-section__edit-post .ass1-section__content {
@@ -1460,7 +1469,7 @@ select.form-control:focus {
   position: relative;
 }
 .ass1-head-user__image a:before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 100%;
 }
@@ -1470,7 +1479,7 @@ select.form-control:focus {
   object-fit: cover;
   position: absolute;
   top: 0;
-  left: 0;  
+  left: 0;
 }
 @media only screen and (min-width: 769px) {
   .ass1-head-user__image {
@@ -1583,12 +1592,12 @@ select.form-control:focus {
   margin-top: 36px;
 }
 .ass1-login__form form input,
-.ass1-login__form form > *:not(div)  {
+.ass1-login__form form > *:not(div) {
   background-color: #f6f9fb;
   border-radius: 6px;
 }
 .ass1-login__form form > input,
-.ass1-login__form form > *:not(div) ,
+.ass1-login__form form > *:not(div),
 .ass1-login__form form .ass1-input-copy {
   margin-bottom: 30px;
 }
@@ -1989,7 +1998,7 @@ select.form-control:focus {
 }
 .ass1-calendar__datepicker .datepicker {
   width: 100% !important;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
 }
@@ -2010,8 +2019,19 @@ select.form-control:focus {
   left: 0 !important;
   background-color: #ffffff !important;
 }
-.ass1-calendar__datepicker .datepicker .datepickerContainer > table > tbody > tr,
-.ass1-calendar__datepicker .datepicker .datepickerContainer > table > tbody > tr > td {
+.ass1-calendar__datepicker
+  .datepicker
+  .datepickerContainer
+  > table
+  > tbody
+  > tr,
+.ass1-calendar__datepicker
+  .datepicker
+  .datepickerContainer
+  > table
+  > tbody
+  > tr
+  > td {
   display: block;
   max-width: 100%;
 }
@@ -2065,9 +2085,24 @@ select.form-control:focus {
   color: #63616b;
   cursor: pointer;
 }
-.ass1-calendar__datepicker .datepicker .datepickerDays .datepickerNotInMonth a span,
-.ass1-calendar__datepicker .datepicker .datepickerMonths .datepickerNotInMonth a span,
-.ass1-calendar__datepicker .datepicker .datepickerYears .datepickerNotInMonth a span {
+.ass1-calendar__datepicker
+  .datepicker
+  .datepickerDays
+  .datepickerNotInMonth
+  a
+  span,
+.ass1-calendar__datepicker
+  .datepicker
+  .datepickerMonths
+  .datepickerNotInMonth
+  a
+  span,
+.ass1-calendar__datepicker
+  .datepicker
+  .datepickerYears
+  .datepickerNotInMonth
+  a
+  span {
   color: #d7dbe5;
 }
 .ass1-calendar__datepicker .datepicker .datepickerMonths,
@@ -2112,16 +2147,46 @@ select.form-control:focus {
 .ass1-calendar__datepicker .datepicker thead tr:first-child th a span:hover {
   color: #3482e2;
 }
-.ass1-calendar__datepicker .datepicker thead tr:first-child th:first-child a span,
-.ass1-calendar__datepicker .datepicker thead tr:first-child th:last-child a span {
+.ass1-calendar__datepicker
+  .datepicker
+  thead
+  tr:first-child
+  th:first-child
+  a
+  span,
+.ass1-calendar__datepicker
+  .datepicker
+  thead
+  tr:first-child
+  th:last-child
+  a
+  span {
   color: #9fa3ac;
 }
-.ass1-calendar__datepicker .datepicker table.datepickerViewMonths tbody.datepickerDays,
-.ass1-calendar__datepicker .datepicker table.datepickerViewMonths tbody.datepickerYears,
-.ass1-calendar__datepicker .datepicker table.datepickerViewMonths tr.datepickerDoW,
-.ass1-calendar__datepicker .datepicker table.datepickerViewYears tbody.datepickerDays,
-.ass1-calendar__datepicker .datepicker table.datepickerViewYears tbody.datepickerMonths,
-.ass1-calendar__datepicker .datepicker table.datepickerViewYears tr.datepickerDoW {
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewMonths
+  tbody.datepickerDays,
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewMonths
+  tbody.datepickerYears,
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewMonths
+  tr.datepickerDoW,
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewYears
+  tbody.datepickerDays,
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewYears
+  tbody.datepickerMonths,
+.ass1-calendar__datepicker
+  .datepicker
+  table.datepickerViewYears
+  tr.datepickerDoW {
   display: none;
 }
 .ass1-calendar__footer {
@@ -2225,7 +2290,8 @@ select.form-control:focus {
 /*.ass1-header__menu > li:hover > .ass1-header__nav {
   display: block !important;
 }
-*/.ass1-header__menu-transition {
+*/
+.ass1-header__menu-transition {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -2240,7 +2306,7 @@ select.form-control:focus {
   left: 0;
   right: 0;
   background-color: #ffffff;
-  background-image: url('/images/menu-bg.jpg');
+  background-image: url("/images/menu-bg.jpg");
   background-position: cover;
   border-top: solid 1px #e5e9ec;
   border-bottom: solid 1px #e6e9f1;
@@ -2460,7 +2526,6 @@ select.form-control:focus {
   color: #ffffff !important;
 }
 
-
 @media only screen and (max-width: 480px) {
   .ass1-section__item .ass1-section {
     padding: 15px 15px 0;
@@ -2475,7 +2540,7 @@ select.form-control:focus {
     margin: 0 0 10px 0;
   }
   .modal-open .modal {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -2488,7 +2553,7 @@ select.form-control:focus {
   margin-bottom: 20px;
 }
 .ass1-login__form .avatar:before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 100%;
 }
@@ -2501,12 +2566,12 @@ select.form-control:focus {
   object-fit: cover;
 }
 .ass1-section__image a {
-  display: block
+  display: block;
 }
 .ass1-section__image:before {
-  content: '';
+  content: "";
   pointer-events: none;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2514,9 +2579,9 @@ select.form-control:focus {
   right: 0;
   opacity: 0;
   z-index: 2;
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 6px;
 }
 .ass1-section__image:hover:before {
@@ -2533,8 +2598,6 @@ select.form-control:focus {
   margin-bottom: 100px;
   position: relative;
 }
-
-
 
 /* Modify */
 .ass1-section__image {
@@ -2565,7 +2628,7 @@ select.form-control:focus {
 .ass1-btn-meme + .ass1-btn-meme {
   margin-left: 10px;
 }
-.ass1-aside .ass1-aside__edit-post-head .ass1-checkbox{
+.ass1-aside .ass1-aside__edit-post-head .ass1-checkbox {
   margin-bottom: 8px;
   width: 50%;
 }

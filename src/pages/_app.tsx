@@ -1,23 +1,29 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/css/style.css";
-
+import "../../src/components/Header/header.scss"
 import App from "next/app";
-import Head from 'next/head'
 import { AppContext, AppProps } from "next/app";
-
+import Head from 'next/head'
 import { useMemo } from "react";
 
 import es6Promise from "es6-promise"
-import cookie from "cookie"
 
 import { Header, Footer } from "../components";
-import { parseJwt } from "../helpers";
 import userService from "../service/userService";
+import { getTokenSSRAndCSR } from "../helpers";
+import { useGlobalState } from "../states"
 
 es6Promise.polyfill();
 
 function MyApp({ Component, pageProps, router }: AppProps) {
     const pathName = router.pathname
+    const [currentUser, setCurrentUser] = useGlobalState("currentUser")
+    const [token, setToken] = useGlobalState("token")
+
+    useMemo(() => {
+        setToken(pageProps.token)
+        setCurrentUser(pageProps.userInfo)
+    }, [])
 
     const hiddenFooter = useMemo(() => {
         const excluded = ['/', '/posts/[postId]'];
@@ -70,21 +76,19 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 }
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
-    const appProps = await App.getInitialProps(appContext);
-    const cookieStr = appContext.ctx.req.headers.cookie || ''
-    const token = cookie.parse(cookieStr).token
-    const userToken = parseJwt(token)
-
     let userRes = null
 
-    if (userToken && userToken.id) {
+    const appProps = await App.getInitialProps(appContext)
+    const [token, userToken] = getTokenSSRAndCSR(appContext.ctx)
+
+    if (typeof window === "undefined" && userToken?.id && userToken?.email) {
         userRes = await userService.getUserID(userToken.id)
     }
-
     return {
         pageProps: {
             ...appProps.pageProps,
-            userInfo: userRes && userRes.user
+            userInfo: userRes && userRes.user,
+            token
         }
     }
 }

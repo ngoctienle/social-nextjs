@@ -1,7 +1,8 @@
 import { PostDetailForm, PostDetailSidebar } from "../../components";
+import { useAuthen } from "../../helpers/useAuthen";
 
 export default function PostCreate() {
-
+    useAuthen()
     return (
         <div className="container">
             <div className="row">
@@ -16,4 +17,3 @@ export default function PostCreate() {
     )
 }
 
-import React from 'react'

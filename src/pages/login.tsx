@@ -1,20 +1,13 @@
+import Link from "next/link"
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-
-interface FormLogin {
-    email: string,
-    password: string
-}
-
-const initFormData: FormLogin = {
-    email: '',
-    password: ''
-}
+import { useEffect } from "react"
+// import { useGlobalState } from "../states"
+import { useNotAuthen } from "../helpers/useAuthen"
 
 const Login = () => {
-    const [formData, setFormData] = useState(initFormData)
-    const router = useRouter()
+    useNotAuthen()
 
+    const router = useRouter()
     const errorString = router.query.error
 
     useEffect(() => {
@@ -23,29 +16,7 @@ const Login = () => {
             window.history.pushState({}, document.title, "/login")
         }
     }, [errorString])
-    const handleOnChange = (key: string) => (e: any) => {
-        const value = e.target.value
-        setFormData({
-            ...formData,
-            [key]: value
-        })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const body = JSON.stringify(formData)
-        const method = "POST"
-        fetch('/api/login', {
-            body,
-            method,
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                // router.push('/')
-            })
-    }
+
     const handleSubmitForm = (e) => {
         e.preventDefault()
         e.target.submit()
@@ -59,21 +30,18 @@ const Login = () => {
             <div className="ass1-login__content">
                 <p>Đăng nhập</p>
                 <div className="ass1-login__form">
-                    {/* <form action="#" onSubmit={handleSubmit}> */}
                     <form action="/api/login" method="POST" onSubmit={handleSubmitForm}>
                         <input
-                            // value={formData.email}
-                            // onChange={handleOnChange('email')}
                             name="email"
                             type="text" className="form-control" placeholder="Email" required />
                         <input
-                            // value={formData.password}
-                            // onChange={handleOnChange('password')}
                             name="password"
                             type="password" className="form-control" placeholder="Mật khẩu" required />
 
                         <div className="ass1-login__send">
-                            <a href="dang-ky.html">Đăng ký một tài khoản</a>
+                            <Link href="/register">
+                                <a>Đăng ký một tài khoản</a>
+                            </Link>
                             <button type="submit" className="ass1-btn">Đăng nhập</button>
                         </div>
                     </form>

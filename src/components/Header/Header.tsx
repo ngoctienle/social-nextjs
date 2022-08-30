@@ -1,6 +1,23 @@
 import Link from "next/link";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router"
+import { useGlobalState } from "../../states";
 
-export default function Header() {
+const Header = () => {
+    const router = useRouter()
+    const [, setToken] = useGlobalState("token")
+    const [userInfo, setUserInfo] = useGlobalState("currentUser")
+
+    const handleLogout = () => {
+        const check = window.confirm('Do you really want to sign out?')
+        if (check) {
+            Cookies.remove('token')
+            setToken('')
+            setUserInfo(null)
+            router.push("/login")
+        }
+
+    }
     return (
         <header>
             <div className="ass1-header">
@@ -95,13 +112,30 @@ export default function Header() {
                     <a href="#" className="ass1-header__btn-upload ass1-btn">
                         <i className="icon-Upvote" /> Upload
                     </a>
-                    <Link href="/login">
-                        <a className="ass1-header__btn-upload ass1-btn">
-                            Login
-                        </a>
-                    </Link>
+                    {
+                        userInfo
+                            ? <div className="wrapper-user">
+                                <a className="user-header">
+                                    <span className="avatar">
+                                        <img src={userInfo.profilepicture} alt="avatar" />
+                                    </span>
+                                    <span className="email">{userInfo.email}</span>
+                                </a>
+                                <div onClick={handleLogout} className="logout">Logout</div>
+                            </div>
+                            : <Link href="/login">
+                                <a className="ass1-header__btn-upload ass1-btn">
+                                    Login
+                                </a>
+                            </Link>
+                    }
+
+
+
                 </div>
             </div>
         </header>
     )
 }
+
+export default Header
